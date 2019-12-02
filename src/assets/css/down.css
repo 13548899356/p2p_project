@@ -1,0 +1,51 @@
+.down1 {
+	width: 100%;
+	height: 100%;
+	background-color: #606266;
+	;
+}
+
+.down1-1 {
+	width: 70%;
+	height: 200px;
+	margin-left: 200px;
+	color: white;
+}
+
+.down1-1-1 {
+	width: 20%;
+	height: 160px;
+
+	padding-top: 20px;
+}
+
+.down1-1-2 {
+	width: 20%;
+	height: 160px;
+	margin-left: 210px;
+	margin-top: -160px;
+}
+
+.down1-1-3 {
+	width: 20%;
+	height: 160px;
+	margin-left: 420px;
+	margin-top: -160px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+
+}
+
+.down1-1-2 div {
+	padding-top: 5px;
+
+}
+
+.down2 {
+	float: right;
+	margin-top: -130px;
+	margin-right: 80px;
+}
