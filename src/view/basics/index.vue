@@ -19,6 +19,7 @@
 					<el-carousel-item>
 						<img src="../../assets/carousel/c3.png" draggable="false" style="width: 100%;height: 100%;" />
 					</el-carousel-item>
+
 				</el-carousel>
 			</div>
 
@@ -26,7 +27,7 @@
 
 		<!-- part1 -->
 		<div>
-			<h1 >亿人宝，借贷服务</h1>
+			<h1 style="text-align: center">亿人宝，借贷服务</h1>
 			<div class="part1">
 			</div>
 		</div>
