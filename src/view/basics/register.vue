@@ -222,19 +222,19 @@
 		},
 		methods: {
 			/* doSubmit: function() {
-						
+
 						let url=this.axios.urls.SYSTEM_USER_DOLOGIN;
 						let params={
 							name:'zsss'
 						}
-						
+
 						this.axios.post(url,params).then(resp=>{
-							
+
 						}).catch(resp=>{})
-						
+
 						console.log("aaa");
 					}
-		
+
 		*/
 			timeOut: function() {
 				this.isDis = true;
@@ -270,7 +270,7 @@
 						window.clearInterval(clock)
 					}
 				}, 1000)
-				
+
 
 			}
 		},
@@ -284,7 +284,7 @@
 			if(this.active==2){
 				// this.toLogin();
 			}
-			
+
 		}
 
 	}

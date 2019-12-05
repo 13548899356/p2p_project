@@ -12,7 +12,7 @@
 						<el-tab-pane label="账号登录" name="second">
 
 							<el-form>
-								<el-input type="text" placeholder="登录账号" autocomplete="off"></el-input>
+								<el-input type="text" placeholder="登录账号" autocomplete="off"  ></el-input>
 
 								<el-input class="first3-1" type="password" placeholder="登录密码" autocomplete="off" show-password></el-input>
 								<el-button  class="first3-1" type="primary" style="width: 100%;">提交</el-button>
@@ -25,20 +25,20 @@
 						<el-tab-pane label="手机登录" name="first">
 
 							<el-form>
-								<el-input type="text" placeholder="手机号码" autocomplete="off"></el-input>
-								<el-input class="first3-1" placeholder="验证码">
+								<el-input type="text" v-model="phone" placeholder="手机号码" autocomplete="off"></el-input>
+								<el-input class="first3-1" v-model="msg" placeholder="验证码">
 									<!-- <span @click="timeOut()" >{{message}}</span> -->
 									<template slot="append" >
-										<el-button type="primary" @click="timeOut()" :disabled="isDis">{{message}}</el-button>
+                        <el-button type="primary" @click="timeOut()" :disabled="isDis">{{message}}</el-button>
 									</template>
 								</el-input>
 
-								<el-button class="first3-1"  type="primary" style="width: 100%;">提交</el-button>
+								<el-button class="first3-1"   type="primary" style="width: 100%;" @click="doSubmit">提交</el-button>
 
 							</el-form>
-								
+
 						</el-tab-pane>
-						
+
 					</el-tabs>
 				</template>
 
@@ -46,7 +46,7 @@
 		</div>
 		<div class="first2">
 			<Down></Down>
-			
+
 		</div>
 	</div>
 
@@ -61,28 +61,39 @@
 			return {
 				'activeName': 'second',
 				'message':'发送验证码',
-				'isDis':false
+				'isDis':false,
+        'phone':null,
+        'msg':null
+
+
 
 			};
 
 		},
 		methods: {
-			/* doSubmit: function() {
-				
-				let url=this.axios.urls.SYSTEM_USER_DOLOGIN;
-				let params={
-					name:'zsss'
-				}
-				
-				this.axios.post(url,params).then(resp=>{
-					
-				}).catch(resp=>{})
-				
-				console.log("aaa");
-			}
+			 doSubmit: function() {
 
- */
+				let url=this.axios.urls.SYSTEM_getPhoneMessage;
+				let params={
+					phone:this.phone,
+          msg:this.msg
+				}
+
+				this.axios.post(url,params).then(resp=>{
+          console.log(resp.data)
+				}).catch(resp=>{})
+
+
+			},
+
 			timeOut:function(){
+			     let url=this.axios.urls.SYSTEM_getA;
+			     this.axios.post(url,{}).then(resp=>{
+
+           }).catch(resp=>{
+
+           })
+
 				this.isDis=true;
 				var total=60;
 				 let clock = window.setInterval(() => {
@@ -94,14 +105,14 @@
 						 this.isDis=false;
 					}
 				    },1000)
-				
-				
+
+
 			}
 		},
 		components: {
 			Top,
 			Down
-			
+
 
 		}
 
